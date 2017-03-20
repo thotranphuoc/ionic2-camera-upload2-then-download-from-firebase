@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>CAMERA</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img id="camera-image" />
+  <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="takePicture()"><ion-icon name="camera"></ion-icon></button>
+  </ion-fab>
+  <ion-fab bottom left>
+    <button ion-fab color="primary" (click)="takePictureFromGallery()"><ion-icon name="albums"></ion-icon></button>
+  </ion-fab>
+  <button id="btnUpload" ion-button block (click)="upload2Firebase()" [disabled]="!isbase64PicReady">Up to Firebase</button>
+  <button ion-button block (click)="loadPhotos()">Load</button>
+  <img id="camera-image-load" />
+</ion-content>
