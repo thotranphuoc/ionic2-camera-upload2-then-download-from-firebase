@@ -29,8 +29,9 @@ export class HomePage {
     };
     Camera.getPicture(options)
     .then((imageData)=>{
-      let cameraImageSelector = document.getElementById('camera-image');
       this.base64Image = "data:image/jpeg;base64," + imageData;
+
+      let cameraImageSelector = document.getElementById('camera-image');
       cameraImageSelector.setAttribute('src', this.base64Image);
       this.alertMessage('base64Image', this.base64Image);
       this.isbase64PicReady = true;
@@ -54,9 +55,11 @@ export class HomePage {
       mediaType: 0,
       sourceType: 0  // default camera =1
     }).then((imageData) => {
-      let cameraImageSelector = document.getElementById('camera-image');
       this.base64Image = "data:image/jpeg;base64," + imageData;
+
+      let cameraImageSelector = document.getElementById('camera-image');
       cameraImageSelector.setAttribute('src', this.base64Image);
+
       this.alertMessage('base64Image', this.base64Image);
       this.isbase64PicReady = true;
     }, (err) => {
@@ -90,7 +93,7 @@ export class HomePage {
 
   loadPhotos(){
     let cameraImageSelector = document.getElementById('camera-image-load');
-    var storageRef = firebase.storage().ref('images/IMG-1489923381206.jpg');
+    var storageRef = firebase.storage().ref('images/IMG-1490020882308.jpg');
     storageRef.getDownloadURL().then((url)=>{
       cameraImageSelector.setAttribute('src',url);
       alert(url);
